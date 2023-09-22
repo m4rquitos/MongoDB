@@ -1,0 +1,52 @@
+db.personas.insertMany(
+    [
+    {
+      "nombre": "Juan Pérez",
+      "edad": 30,
+      "email": "juan.perez@example.com",
+      "ciudad": "Ciudad de México"
+    },
+    {
+      "nombre": "María García",
+      "edad": 28,
+      "email": "maria.garcia@example.com",
+      "ciudad": "Madrid"
+    },
+    {
+      "nombre": "Luis Rodríguez",
+      "edad": 35,
+      "email": "luis.rodriguez@example.com",
+      "ciudad": "Buenos Aires"
+    },
+    {
+      "nombre": "Ana Smith",
+      "edad": 26,
+      "email": "ana.smith@example.com",
+      "ciudad": "Nueva York"
+    },
+    {
+      "nombre": "Carlos López",
+      "edad": 40,
+      "email": "carlos.lopez@example.com",
+      "ciudad": "Barcelona"
+    },
+    {
+      "nombre": "Laura González",
+      "edad": 32,
+      "email": "laura.gonzalez@example.com",
+      "ciudad": "Santiago"
+    },
+    {
+      "nombre": "Pedro Ramirez",
+      "edad": 27,
+      "email": "pedro.ramirez@example.com",
+      "ciudad": "Bogotá"
+    },
+    {
+      "nombre": "Isabel Martínez",
+      "edad": 29,
+      "email": "isabel.martinez@example.com",
+      "ciudad": "Ciudad de México"
+    }
+  ]
+)

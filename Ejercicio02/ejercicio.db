@@ -1,0 +1,233 @@
+use crud
+
+db.createCollection("Usuarios")
+db.createCollection("Materias")
+db.createCollection("Notas")
+
+db.Usuarios.insertMany(
+	[
+    {
+      "nombre": "Luis Pérez",
+      "edad": 28,
+      "email": "luis.perez@example.com",
+      "telefono": "+1 (123) 456-7890"
+    },
+    {
+      "nombre": "Ana García",
+      "edad": 35,
+      "email": "ana.garcia@example.com",
+      "telefono": "+34 123 456 789"
+    },
+    {
+      "nombre": "Carlos Rodríguez",
+      "edad": 42,
+      "email": "carlos.rodriguez@example.com",
+      "telefono": "+54 11 1234-5678"
+    },
+    {
+      "nombre": "María Smith",
+      "edad": 29,
+      "email": "maria.smith@example.com",
+      "telefono": "+1 (987) 654-3210"
+    },
+    {
+      "nombre": "Laura López",
+      "edad": 31,
+      "email": "laura.lopez@example.com",
+      "telefono": "+34 987 654 321"
+    },
+    {
+      "nombre": "Juan Martínez",
+      "edad": 25,
+      "email": "juan.martinez@example.com",
+      "telefono": "+57 1 2345678"
+    },
+    {
+      "nombre": "Pedro González",
+      "edad": 34,
+      "email": "pedro.gonzalez@example.com",
+      "telefono": "+1 (789) 123-4567"
+    },
+    {
+      "nombre": "Isabel Ramírez",
+      "edad": 27,
+      "email": "isabel.ramirez@example.com",
+      "telefono": "+52 55 1234-5678"
+    },
+    {
+      "nombre": "Lucía Fernández",
+      "edad": 30,
+      "email": "lucia.fernandez@example.com",
+      "telefono": "+1 (567) 890-1234"
+    },
+    {
+      "nombre": "Antonio Ruiz",
+      "edad": 38,
+      "email": "antonio.ruiz@example.com",
+      "telefono": "+34 654 321 987"
+    }
+  ]
+)
+
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("650d8ad4aa98ba592e388383"),
+    '1': ObjectId("650d8ad4aa98ba592e388384"),
+    '2': ObjectId("650d8ad4aa98ba592e388385"),
+    '3': ObjectId("650d8ad4aa98ba592e388386"),
+    '4': ObjectId("650d8ad4aa98ba592e388387"),
+    '5': ObjectId("650d8ad4aa98ba592e388388"),
+    '6': ObjectId("650d8ad4aa98ba592e388389"),
+    '7': ObjectId("650d8ad4aa98ba592e38838a"),
+    '8': ObjectId("650d8ad4aa98ba592e38838b"),
+    '9': ObjectId("650d8ad4aa98ba592e38838c")
+  }
+}
+
+
+db.Materias.insertMany(
+    [
+    {
+      "nombre de la materia": "Matemáticas",
+      "duracion": "4 meses"
+    },
+    {
+      "nombre de la materia": "Historia",
+      "duracion": "3 meses"
+    },
+    {
+      "nombre de la materia": "Literatura",
+      "duracion": "3 meses"
+    },
+    {
+      "nombre de la materia": "Física",
+      "duracion": "5 meses"
+    },
+    {
+      "nombre de la materia": "Química",
+      "duracion": "4 meses"
+    },
+    {
+      "nombre de la materia": "Biología",
+      "duracion": "4 meses"
+    },
+    {
+      "nombre de la materia": "Inglés",
+      "duracion": "6 meses"
+    },
+    {
+      "nombre de la materia": "Programación",
+      "duracion": "6 meses"
+    },
+    {
+      "nombre de la materia": "Arte",
+      "duracion": "2 meses"
+    },
+    {
+      "nombre de la materia": "Educación Física",
+      "duracion": "2 meses"
+    }
+  ]
+)
+
+
+db.Notas.insertMany(
+    [
+    {
+      "materia": "Matemáticas",
+      "nota": 90,
+      "instructor": "Juan Pérez"
+    },
+    {
+      "materia": "Historia",
+      "nota": 85,
+      "instructor": "María García"
+    },
+    {
+      "materia": "Literatura",
+      "nota": 88,
+      "instructor": "Carlos Rodríguez"
+    },
+    {
+      "materia": "Física",
+      "nota": 92,
+      "instructor": "Ana Smith"
+    },
+    {
+      "materia": "Química",
+      "nota": 87,
+      "instructor": "Luis Pérez"
+    },
+    {
+      "materia": "Biología",
+      "nota": 91,
+      "instructor": "Laura López"
+    },
+    {
+      "materia": "Inglés",
+      "nota": 89,
+      "instructor": "Pedro González"
+    },
+    {
+      "materia": "Programación",
+      "nota": 95,
+      "instructor": "Isabel Martínez"
+    },
+    {
+      "materia": "Arte",
+      "nota": 80,
+      "instructor": "Lucía Fernández"
+    },
+    {
+      "materia": "Educación Física",
+      "nota": 88,
+      "instructor": "Antonio Ruiz"
+    }
+  ]
+)
+
+Syntaxis Para Buscar algun dato expecifico
+
+db.Notas.find(
+  {
+	"nota": 90
+}
+)
+
+Syntaxis Para actualizar Un dato expecifico
+
+db.Usuarios.updateOne(
+    {
+        "Nombre":"Luis Pérez"
+    },
+    {
+        $set:
+       {
+        "Nombre":"Karol Tatiana Angarita"
+       } 
+    }
+    
+)
+
+
+db.Usuarios.updateOne(
+    {  
+        nombre: 'Karol Tatiana Angarita',
+        edad: 28,
+        telefono: '+1 (123) 456-7890'
+    },
+    {
+        $set: {
+            "Edad": 17,
+            "Telefono": "+1 (123) 456-7890"
+        }
+    }
+)
+
+Eliminar Datos
+
+db.Usuarios.deleteOne({
+    "nombre": "Karol Tatiana Angarita",
+})
